@@ -6,6 +6,14 @@
 				<span>另存为</span>
 			</div>
 		</div>
+		<div>
+			<spin>{{ processValue }}</spin>
+			<input type="range" min="0" max="99" v-model="processValue" @input="onProcessChanged" />
+			<button @click="onPlayStop">
+				<i v-if="isPlaying">⏸</i>
+				<i v-else>▶</i>
+			</button>
+		</div>
 		<div v-login="saveEvent" v-if="props.save" class="ope-button-item">
 			<div class="btn-container">
 				<i class="iconfont i_save"></i>
@@ -76,6 +84,46 @@ const toPraise = () => {
 }
 const commentEvent = () => {
 	emits('commentEvent')
+}
+
+import { ref } from 'vue'
+import useProxy from '@/hooks/useProxy'
+const proxy = useProxy()
+const processValue = ref(0)
+const onProcessChanged = () => {
+	proxy.$Bus.emit('stepToTime', { value: processValue.value })
+}
+
+const isPlaying = ref(false)
+let playbackInterval = 0
+const onPlayStop = () => {
+	if (isPlaying.value) {
+		stopAnimation()
+	} else {
+		playAnimation()
+	}
+}
+// 播放动画
+function playAnimation() {
+	if (isPlaying.value) return
+
+	isPlaying.value = true
+
+	playbackInterval = setInterval(() => {
+		processValue.value += 1
+		if (processValue.value >= 100) {
+			processValue.value = 0
+		}
+		proxy.$Bus.emit('stepToTime', { value: processValue.value })
+	}, 16)
+}
+
+// 停止动画播放
+function stopAnimation() {
+	if (!isPlaying.value) return
+
+	clearInterval(playbackInterval)
+	isPlaying.value = false
 }
 </script>
 <style lang="less">

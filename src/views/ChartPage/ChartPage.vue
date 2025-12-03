@@ -15,12 +15,13 @@ import chartMenu from '@/components/chartMenu.vue'
 
 import { getChartTemplatesList } from '@/network/chart.ts'
 import { ElMessageBox } from 'element-plus'
+import { list as chartList } from '@/utils/chartItem.ts'
 
 const list = reactive<any>([])
 
 onBeforeMount(async () => {
 	const res: any = await getChartTemplatesList()
-	for (const item of res) {
+	for (const item of chartList) {
 		item.show = false
 		list.push(item)
 	}

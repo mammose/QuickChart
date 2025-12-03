@@ -1,47 +1,47 @@
-import img1_1 from '@/assets/image/1_1.webp'
-import img1_2 from '@/assets/image/1_2.webp'
-import img1_3 from '@/assets/image/1_3.webp'
-import img1_4 from '@/assets/image/1_4.webp'
-import img1_5 from '@/assets/image/1_5.webp'
-import img1_6 from '@/assets/image/1_6.webp'
-import img1_7 from '@/assets/image/1_7.webp'
-import img1_8 from '@/assets/image/1_8.webp'
+import img1_1 from '@/assets/image/logo.png'
+import img1_2 from '@/assets/image/logo.png'
+import img1_3 from '@/assets/image/logo.png'
+import img1_4 from '@/assets/image/logo.png'
+import img1_5 from '@/assets/image/logo.png'
+import img1_6 from '@/assets/image/logo.png'
+import img1_7 from '@/assets/image/logo.png'
+import img1_8 from '@/assets/image/logo.png'
 
-import img2_1 from '@/assets/image/2_1.webp'
-import img2_2 from '@/assets/image/2_2.webp'
-import img2_3 from '@/assets/image/2_3.webp'
-import img2_4 from '@/assets/image/2_4.webp'
-import img2_5 from '@/assets/image/2_5.webp'
-import img2_6 from '@/assets/image/2_6.webp'
-import img2_7 from '@/assets/image/2_7.webp'
-import img2_8 from '@/assets/image/2_8.webp'
+import img2_1 from '@/assets/image/logo.png'
+import img2_2 from '@/assets/image/logo.png'
+import img2_3 from '@/assets/image/logo.png'
+import img2_4 from '@/assets/image/logo.png'
+import img2_5 from '@/assets/image/logo.png'
+import img2_6 from '@/assets/image/logo.png'
+import img2_7 from '@/assets/image/logo.png'
+import img2_8 from '@/assets/image/logo.png'
 
-import img3_1 from '@/assets/image/3_1.webp'
-import img3_2 from '@/assets/image/3_2.webp'
-import img3_3 from '@/assets/image/3_3.webp'
-import img3_4 from '@/assets/image/3_4.webp'
+import img3_1 from '@/assets/image/logo.png'
+import img3_2 from '@/assets/image/logo.png'
+import img3_3 from '@/assets/image/logo.png'
+import img3_4 from '@/assets/image/logo.png'
 
-import img4_1 from '@/assets/image/4_1.webp'
-import img4_2 from '@/assets/image/4_2.webp'
-import img4_3 from '@/assets/image/4_3.webp'
-import img4_4 from '@/assets/image/4_4.webp'
-import img4_5 from '@/assets/image/4_5.webp'
+import img4_1 from '@/assets/image/logo.png'
+import img4_2 from '@/assets/image/logo.png'
+import img4_3 from '@/assets/image/logo.png'
+import img4_4 from '@/assets/image/logo.png'
+import img4_5 from '@/assets/image/logo.png'
 
-import img5_1 from '@/assets/image/5_1.webp'
+import img5_1 from '@/assets/image/logo.png'
 
-import img6_1 from '@/assets/image/6_1.webp'
+import img6_1 from '@/assets/image/logo.png'
 
-import img7_1 from '@/assets/image/7_1.webp'
-import img7_2 from '@/assets/image/7_2.webp'
+import img7_1 from '@/assets/image/logo.png'
+import img7_2 from '@/assets/image/logo.png'
 
-import img8_1 from '@/assets/image/8_1.webp'
+import img8_1 from '@/assets/image/logo.png'
 
-import img9_1 from '@/assets/image/9_1.webp'
-import img9_2 from '@/assets/image/9_2.webp'
-import img9_3 from '@/assets/image/9_3.webp'
+import img9_1 from '@/assets/image/logo.png'
+import img9_2 from '@/assets/image/logo.png'
+import img9_3 from '@/assets/image/logo.png'
 
-import img10_1 from '@/assets/image/10_1.webp'
-import img10_2 from '@/assets/image/10_2.webp'
+import img10_1 from '@/assets/image/logo.png'
+import img10_2 from '@/assets/image/logo.png'
 
 export interface ListInt {
 	type: string
@@ -55,7 +55,7 @@ export interface ListInt {
 	}[]
 }
 
-const list: ListInt[] = [
+export const list: ListInt[] = [
 	{
 		type: '线形图',
 		icon: 'i_line',

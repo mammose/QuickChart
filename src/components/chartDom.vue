@@ -115,6 +115,12 @@ const initChart = () => {
 	data.option = chart.getOption
 	data.code = chart.getOption
 
+	// 图表SEEK测试
+	proxy.$Bus.on('stepToTime', (e: any) => {
+		// 默认时长为1000ms
+		chartInstance.stepToTime(e.value * 10)
+	})
+
 	// 监听图表配置变化
 	proxy.$Bus.on('optionChange', (e: any) => {
 		let k: string = Object.keys(e)[0]
@@ -242,6 +248,7 @@ onUnmounted(() => {
 	chart_i.value!.dispose()
 
 	// 事件监听销毁
+	proxy.$Bus.off('stepToTime')
 	proxy.$Bus.off('optionChange')
 	proxy.$Bus.off('dataChange')
 	proxy.$Bus.off('canvasChange')
