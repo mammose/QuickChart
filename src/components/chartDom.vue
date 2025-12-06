@@ -118,7 +118,12 @@ const initChart = () => {
 	// 图表SEEK测试
 	proxy.$Bus.on('stepToTime', (e: any) => {
 		// 默认时长为1000ms
-		chartInstance.stepToTime(e.value * 10)
+		// *1000/99是为了准确插值，确保最后一帧显示完整，参看@axisPosition-duration.html
+		// keyTime = (framePos * animationDuration) / (animationDuration / 1000 * frameRate -1)
+
+		let adjustTime = e.value * 1000
+		adjustTime /= 99
+		chartInstance.stepToTime(adjustTime)
 	})
 
 	// 监听图表配置变化
